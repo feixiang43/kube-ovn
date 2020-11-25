@@ -651,7 +651,10 @@ spec:
           resources:
             requests:
               cpu: 500m
-              memory: 300Mi
+              memory: 200Mi
+            limits:
+              cpu: 3
+              memory: 3Gi
           volumeMounts:
             - mountPath: /var/run/openvswitch
               name: host-run-ovs
@@ -710,7 +713,10 @@ spec:
           resources:
             requests:
               cpu: 500m
-              memory: 300Mi
+              memory: 200Mi
+            limits:
+              cpu: 500m
+              memory: 200Mi
           volumeMounts:
             - mountPath: /var/run/openvswitch
               name: host-run-ovs
@@ -866,7 +872,7 @@ spec:
           resources:
             requests:
               cpu: 500m
-              memory: 2Gi
+              memory: 200Mi
             limits:
               cpu: 1000m
               memory: 2Gi
@@ -1145,7 +1151,10 @@ spec:
           resources:
             requests:
               cpu: 500m
-              memory: 300Mi
+              memory: 200Mi
+            limits:
+              cpu: 3
+              memory: 3Gi
           volumeMounts:
             - mountPath: /var/run/openvswitch
               name: host-run-ovs
@@ -1204,7 +1213,10 @@ spec:
           resources:
             requests:
               cpu: 500m
-              memory: 300Mi
+              memory: 200Mi
+            limits:
+              cpu: 500m
+              memory: 200Mi
           volumeMounts:
             - mountPath: /var/run/openvswitch
               name: host-run-ovs
@@ -1357,7 +1369,7 @@ spec:
           resources:
             requests:
               cpu: 200m
-              memory: 300Mi
+              memory: 200Mi
             limits:
               cpu: 1000m
               memory: 800Mi
@@ -1489,6 +1501,13 @@ spec:
             periodSeconds: 7
             failureThreshold: 5
             timeoutSeconds: 45
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
       nodeSelector:
         kubernetes.io/os: "linux"
       volumes:
@@ -1592,6 +1611,13 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 7
           failureThreshold: 5
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
       nodeSelector:
         kubernetes.io/os: "linux"
       volumes:
@@ -1688,7 +1714,7 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 300Mi
+              memory: 200Mi
             limits:
               cpu: 200m
               memory: 400Mi
